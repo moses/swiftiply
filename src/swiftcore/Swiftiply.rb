@@ -464,7 +464,7 @@ EOC
 			new_config[Cuser] = config[Cuser]
 			new_config[Cgroup] = config[Cgroup]
 			
-			ProxyBag.server_unavailable_timeout ||= config[Ctimeout]
+			ProxyBag.server_unavailable_timeout = config[Ctimeout] || 6
 			
 			# By default any file over 16k will be sent via chunked encoding
 			# if the client supports HTTP 1.1.  Generally there is no reason
